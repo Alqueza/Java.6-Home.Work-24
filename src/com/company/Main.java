@@ -7,19 +7,19 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        Set<Integer> set1=new HashSet<>(List.of(1, 2, 3));
-        Set<Integer> set2=new HashSet<>(List.of(0, 1, 2));
+        Set<Integer> set1 = new HashSet<>(List.of(1, 2, 3));
+        Set<Integer> set2 = new HashSet<>(List.of(0, 1, 2));
         System.out.println(set1);
         System.out.println(set2);
         System.out.println(diff(set1, set2));
     }
-    public static Set<Integer> diff(Set<Integer>set1, Set<Integer>set2){
-        Set<Integer>newSet=new HashSet<>(set1);
-        newSet.removeAll(set2);
+    public static Set<Integer> diff (Set<Integer> set1, Set<Integer> set2){
+        Set<Integer> set3 = new HashSet<>(set1);
+        set3.removeAll(set2);
         set2.removeAll(set1);
-        newSet.addAll(set2);
+        set3.addAll(set2);
 
-        return newSet;
+        return set3;
     }
 
 }
